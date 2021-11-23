@@ -1,0 +1,59 @@
+#:kivy 2.0.0
+
+Screen:
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDToolbar:
+                        title: "Navigation Drawer"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+                    Widget:
+        MDNavigationDrawer:
+            id: nav_drawer
+            BoxLayout:
+                orientation:'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+                Image:
+                    source: 'avator.png'
+
+                MDLabel:
+                    text: 'Levi'
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                MDLabel:
+                    text: 'Levi@gmail.com'
+                    font_style: 'Subtitle1' 
+                    size_hint_y: None
+                    height: self.texture_size[1]   
+                ScrollView:
+                    MDList:
+                        OneLineIconListItem:
+                            text: 'Profile'
+                            IconLeftWidget: 
+                                icon: 'face-profile'
+                        OneLineIconListItem:
+                            text: 'Stock'
+                            IconLeftWidget: 
+                                icon: 'point-of-sale'
+                        OneLineIconListItem:
+                            text: 'Sales'
+                            IconLeftWidget: 
+                                icon: 'cash'
+                        OneLineIconListItem:
+                            text: 'Technicians'
+                            IconLeftWidget: 
+                                icon: 'car-multiple'
+                        OneLineIconListItem:
+                            text: 'Leave'
+                            IconLeftWidget: 
+                                icon: 'swim'
+                        OneLineIconListItem:
+                            text: 'Logout'
+                            IconLeftWidget: 
+                                icon: 'Logout'
+                        
